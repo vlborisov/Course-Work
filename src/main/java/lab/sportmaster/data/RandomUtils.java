@@ -27,8 +27,7 @@ public final class RandomUtils {
     }
 
     public static String randomAddress() {
-        String[] addresses = {"Невский проспект, 146", "Караванная, 1 лит А", "Стремянная, 1", "Фонарный переулок, 7", "Загородный проспект, 35", "улица Льва Толстого, 9", "Литейный проспект, 43"};
-        return addresses[randomInt(0, 6)];
+        return faker.address().fullAddress();
     }
 
     public static double randomDouble(int min, int max) {
@@ -39,17 +38,15 @@ public final class RandomUtils {
         return faker.bool().bool();
     }
 
-    public static Fruit[] generateArrayOfFruitsWithRandomLength() {
-        int count = randomInt(5, 10);
-        Fruit[] arr = new Fruit[count];
+    public static Fruit[] generateArrayOfFruits(int arrLength) {
+        Fruit[] arr = new Fruit[arrLength];
         for (int i = 0; i < arr.length; i++) {
-            if (randomBoolean()) {
-                arr[i] = new Apple();
-            } else {
-                arr[i] = new Orange();
+                arr[i] = randomBoolean() ? new Apple() :new Orange();
             }
-        }
         return arr;
     }
 
+    public static Fruit[] generateArrayOfFruitsWithRandomLength(){
+     return generateArrayOfFruits(randomInt(5, 10));
+    }
 }

@@ -4,16 +4,21 @@ import lab.sportmaster.goods.Fruit;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static lab.sportmaster.data.RandomUtils.randomAddress;
 
 public class Shop {
 
     private String address;
-    private ArrayList<Fruit> fruitsInShop = new ArrayList<>();
+    private List<Fruit> fruitsInShop = new ArrayList<>();
 
     public Shop(){
         this.address = randomAddress();
+    }
+
+    public Shop(String address){
+        this.address = address;
     }
 
     @Override
