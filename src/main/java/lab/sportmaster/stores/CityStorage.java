@@ -12,7 +12,7 @@ public class CityStorage {
     @Override
     public String toString() {
         return "CityStorage: {\n" +
-                "    fruitsList " + this.fruitsList +
+                "    fruitsList: " + this.fruitsList +
                 "\n}";
     }
 
